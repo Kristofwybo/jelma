@@ -791,20 +791,6 @@
             <a class="button button-primary" href="#contact">Bespreek je vraag</a>
             <a class="button button-secondary" href="#expertise">Bekijk expertise</a>
           </div>
-<!--          <div class="hero-points" aria-label="Kernpunten">-->
-<!--            <div class="point">-->
-<!--              <strong>PBM's</strong>-->
-<!--              <span>Heldere keuzes voor bescherming, gebruik en opvolging.</span>-->
-<!--            </div>-->
-<!--            <div class="point">-->
-<!--              <strong>Machineveiligheid</strong>-->
-<!--              <span>Pragmatisch advies voor veilige technische installaties.</span>-->
-<!--            </div>-->
-<!--            <div class="point">-->e
-<!--              <strong>Energiesoftware</strong>-->
-<!--              <span>Backend, data, IoT en infrastructuur met sectorkennis.</span>-->
-<!--            </div>-->
-<!--          </div>-->
         </div>
 
         <aside class="contact-panel" id="contact" aria-labelledby="contact-title">
@@ -1086,7 +1072,7 @@
 
     function showFallbackMessage(payload) {
       message.className = "form-message error is-visible";
-      message.textContent = "Het bericht kon niet verstuurd worden. ";
+      message.textContent = "Door een technisch probleem kon het bericht niet verstuurd worden. ";
       const link = document.createElement("a");
       link.href = buildMailtoFallback(payload);
       link.textContent = "Stuur ons een e-mail.";
