@@ -7,6 +7,7 @@
   <title>Jelma | Preventieadvies & software voor energie</title>
   <style>
     :root {
+      color-scheme: light dark;
       --blue-950: #06263f;
       --blue-900: #07395e;
       --blue-800: #0b4f7a;
@@ -23,6 +24,27 @@
       --danger: #b42318;
       --success: #0f7b45;
       --shadow: 0 18px 55px rgba(6, 38, 63, 0.14);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --blue-950: #eef8ff;
+        --blue-900: #bde9ff;
+        --blue-800: #8fd7f4;
+        --blue-700: #55bfdc;
+        --teal-600: #3fd0dc;
+        --green-500: #58df91;
+        --green-100: #123f31;
+        --sky-100: #12384d;
+        --ink: #eef8ff;
+        --muted: #abc0cc;
+        --line: #254455;
+        --paper: #071923;
+        --white: #0d2532;
+        --danger: #ff9c94;
+        --success: #7ee2a8;
+        --shadow: 0 18px 55px rgba(0, 0, 0, 0.34);
+      }
     }
 
     * {
@@ -122,6 +144,14 @@
       background:
         radial-gradient(circle at 16% 10%, rgba(36, 196, 106, 0.15), transparent 30%),
         linear-gradient(140deg, #f7fbfd 0%, #edf8fb 54%, #e7f7ef 100%);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .hero {
+        background:
+          radial-gradient(circle at 16% 10%, rgba(88, 223, 145, 0.13), transparent 30%),
+          linear-gradient(140deg, #071923 0%, #0a2532 54%, #0d3028 100%);
+      }
     }
 
     .hero::before {
@@ -230,6 +260,12 @@
       color: var(--blue-900);
     }
 
+    @media (prefers-color-scheme: dark) {
+      .button-secondary {
+        background: rgba(13, 37, 50, 0.82);
+      }
+    }
+
     .hero-points {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -243,6 +279,18 @@
       border: 1px solid rgba(216, 228, 234, 0.85);
       border-radius: 8px;
       background: rgba(255, 255, 255, 0.72);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .site-header {
+        border-bottom-color: rgba(37, 68, 85, 0.86);
+        background: rgba(7, 25, 35, 0.9);
+      }
+
+      .point {
+        border-color: rgba(56, 90, 106, 0.86);
+        background: rgba(13, 37, 50, 0.78);
+      }
     }
 
     .point strong {
@@ -316,6 +364,14 @@
       transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
     }
 
+    @media (prefers-color-scheme: dark) {
+      .field input,
+      .field select,
+      .field textarea {
+        background: #0a202c;
+      }
+    }
+
     .field textarea {
       min-height: 126px;
       resize: vertical;
@@ -354,6 +410,16 @@
     .form-message.error {
       background: #fdebea;
       color: var(--danger);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .form-message.success {
+        background: #123f31;
+      }
+
+      .form-message.error {
+        background: #431f1e;
+      }
     }
 
     .form-message a {
@@ -573,9 +639,23 @@
       font-weight: 800;
     }
 
+    @media (prefers-color-scheme: dark) {
+      .person-contact a,
+      .tags li {
+        background: #0a202c;
+      }
+    }
+
     .why-band {
       background: var(--blue-950);
       color: var(--white);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .why-band {
+        background: #051018;
+        color: #eef8ff;
+      }
     }
 
     .why-grid {
@@ -619,6 +699,12 @@
 
     .principle p {
       margin-bottom: 0;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .principle h3 {
+        color: #eef8ff;
+      }
     }
 
     .site-footer {

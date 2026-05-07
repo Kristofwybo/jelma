@@ -7,12 +7,24 @@
   <title>Wettelijke informatie | Jelma</title>
   <style>
     :root {
+      color-scheme: light dark;
       --blue-950: #06263f;
       --blue-900: #07395e;
       --muted: #5a6a76;
       --line: #d8e4ea;
       --paper: #f7fbfd;
       --white: #ffffff;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --blue-950: #eef8ff;
+        --blue-900: #bde9ff;
+        --muted: #abc0cc;
+        --line: #254455;
+        --paper: #071923;
+        --white: #0d2532;
+      }
     }
 
     * {
