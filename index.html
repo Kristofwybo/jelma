@@ -356,6 +356,11 @@
       color: var(--danger);
     }
 
+    .form-message a {
+      color: inherit;
+      font-weight: 900;
+    }
+
     .submit-button {
       width: 100%;
       min-height: 48px;
@@ -777,7 +782,7 @@
             <img class="hero-logo" src="logo.png" width="320" height="213" alt="Jelma">
           </picture>
           <p class="eyebrow">Consultancy door Jelma</p>
-          <h1>Jelma helpt technische organisaties vooruit.</h1>
+          <h1>Jelma helpt organisaties vooruit.</h1>
           <p class="lead">
             Jelma combineert preventieadvies rond PBM's en machineveiligheid met softwareontwikkeling voor de energiesector.
             Persoonlijk, domeingericht en gebouwd voor oplossingen die in de praktijk werken.
@@ -786,20 +791,20 @@
             <a class="button button-primary" href="#contact">Bespreek je vraag</a>
             <a class="button button-secondary" href="#expertise">Bekijk expertise</a>
           </div>
-          <div class="hero-points" aria-label="Kernpunten">
-            <div class="point">
-              <strong>PBM's</strong>
-              <span>Heldere keuzes voor bescherming, gebruik en opvolging.</span>
-            </div>
-            <div class="point">
-              <strong>Machineveiligheid</strong>
-              <span>Pragmatisch advies voor veilige technische installaties.</span>
-            </div>
-            <div class="point">
-              <strong>Energiesoftware</strong>
-              <span>Backend, data, IoT en infrastructuur met sectorkennis.</span>
-            </div>
-          </div>
+<!--          <div class="hero-points" aria-label="Kernpunten">-->
+<!--            <div class="point">-->
+<!--              <strong>PBM's</strong>-->
+<!--              <span>Heldere keuzes voor bescherming, gebruik en opvolging.</span>-->
+<!--            </div>-->
+<!--            <div class="point">-->
+<!--              <strong>Machineveiligheid</strong>-->
+<!--              <span>Pragmatisch advies voor veilige technische installaties.</span>-->
+<!--            </div>-->
+<!--            <div class="point">-->e
+<!--              <strong>Energiesoftware</strong>-->
+<!--              <span>Backend, data, IoT en infrastructuur met sectorkennis.</span>-->
+<!--            </div>-->
+<!--          </div>-->
         </div>
 
         <aside class="contact-panel" id="contact" aria-labelledby="contact-title">
@@ -1068,6 +1073,26 @@
       return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
 
+    function buildMailtoFallback(payload) {
+      const lines = [];
+      if (payload.name)    lines.push("Naam: " + payload.name);
+      if (payload.email)   lines.push("E-mail: " + payload.email);
+      if (payload.phone)   lines.push("Telefoon: " + payload.phone);
+      if (payload.message) lines.push("\nBericht:\n" + payload.message);
+      const subject = encodeURIComponent("Contactformulier jelma.be");
+      const body = encodeURIComponent(lines.join("\n"));
+      return "mailto:contactform@jelma.be?subject=" + subject + "&body=" + body;
+    }
+
+    function showFallbackMessage(payload) {
+      message.className = "form-message error is-visible";
+      message.textContent = "Het bericht kon niet verstuurd worden. ";
+      const link = document.createElement("a");
+      link.href = buildMailtoFallback(payload);
+      link.textContent = "Stuur ons een e-mail.";
+      message.appendChild(link);
+    }
+
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
 
@@ -1109,10 +1134,10 @@
         } else if (response.status === 400) {
           showMessage("error", "Controleer je gegevens en probeer opnieuw.");
         } else {
-          showMessage("error", "Het bericht kon niet verstuurd worden. Probeer later opnieuw.");
+          showFallbackMessage(payload);
         }
       } catch {
-        showMessage("error", "Het bericht kon niet verstuurd worden. Probeer later opnieuw.");
+        showFallbackMessage(payload);
       } finally {
         submitButton.disabled = false;
         submitButton.textContent = "Verstuur bericht";
