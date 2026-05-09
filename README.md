@@ -24,10 +24,14 @@ Single-page static site — vanilla HTML, CSS, and JavaScript. No build step, no
 
 ```
 index.html              Main page (NL)
+styles.css              Main page styles
+contact.js              Contact form behavior
 cookies.html            Cookie policy
 privacy.html            Privacy statement
 wettelijke-informatie.html  Legal information
 legal.css               Shared styles for the three policy pages
+robots.txt              Search crawler policy
+sitemap.xml             Public URL sitemap
 *.webp / *.png          Images and logos
 CNAME                   GitHub Pages domain (jelma.be)
 ```
