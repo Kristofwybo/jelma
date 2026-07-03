@@ -42,22 +42,63 @@
         {
             "@context": "https://schema.org",
             "@type": "Organization",
+            "@id": "https://jelma.be/#organization",
             "name": "Jelma",
-            "url": "https://jelma.be",
+            "legalName": "Jelma BV",
+            "url": "https://jelma.be/",
             "logo": "https://jelma.be/logo-640.webp",
             "description": "Jelma combineert preventieadvies rond PBM's en machineveiligheid met softwareontwikkeling voor de energiesector.",
+            "email": "info@jelma.be",
+            "vatID": "BE0784.371.197",
+            "taxID": "0784.371.197",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Oude Wijnendalestraat 26",
+                "postalCode": "8820",
+                "addressLocality": "Torhout",
+                "addressCountry": "BE"
+            },
+            "contactPoint": [
+                {
+                    "@type": "ContactPoint",
+                    "contactType": "customer support",
+                    "email": "info@jelma.be",
+                    "availableLanguage": [
+                        "nl",
+                        "en"
+                    ]
+                }
+            ],
+            "founder": [
+                {
+                    "@id": "https://jelma.be/#lynn-delanote"
+                },
+                {
+                    "@id": "https://jelma.be/#kristof-wybo"
+                }
+            ],
             "member": [
                 {
                     "@type": "Person",
+                    "@id": "https://jelma.be/#lynn-delanote",
                     "name": "Lynn Delanote",
                     "jobTitle": "Preventieadviseur niveau 2",
+                    "worksFor": {
+                        "@id": "https://jelma.be/#organization"
+                    },
+                    "image": "https://jelma.be/lynn-delanote.webp",
                     "telephone": "+32478187514",
                     "email": "lynn@jelma.be"
                 },
                 {
                     "@type": "Person",
+                    "@id": "https://jelma.be/#kristof-wybo",
                     "name": "Kristof Wybo",
                     "jobTitle": "Industrieel ingenieur automatisering",
+                    "worksFor": {
+                        "@id": "https://jelma.be/#organization"
+                    },
+                    "image": "https://jelma.be/kristof-wybo.webp",
                     "email": "kristof@jelma.be"
                 }
             ]
