@@ -24,6 +24,7 @@ Single-page static site — vanilla HTML, CSS, and JavaScript. No build step, no
 
 ```
 index.html              Main page (NL)
+lynn-delanote.html      Public SEO profile page for Lynn Delanote
 styles.css              Main page styles
 contact.js              Contact form behavior
 cookies.html            Cookie policy
